@@ -12,7 +12,7 @@
 		"tray",
 		"cpu",
 		"memory",
-		"battery",		
+		"battery",
 		"temperature",
 		"pulseaudio",
 		"clock"
@@ -42,10 +42,10 @@
 	// 	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
 	// 	"on-click": "bluetooth toggle"
 	// },
-    "cpu": {
-        "format": "{usage}% <span rise='1000'></span>",
-        "tooltip": false
-    },
+	"cpu": {
+		"format": "{usage}% <span rise='1000'></span>",
+		"tooltip": false
+	},
 	"memory": {
 		"format": "{}% <span rise='1000'></span>"
 		// "on-click": "gksu free_memory.sh"
@@ -99,15 +99,26 @@
 		}
 	},
 	"clock": {
-		"format": "{:%R %a %m/%d}",
-		"tooltip-format": "{calendar}",
+		"format": "{:%H:%M}  ",
+		"format-alt": "{:%R %a %m/%d}",
+		"tooltip-format": "<tt><small>{calendar}</small></tt>",
 		"calendar": {
+			"mode": "month",
+			"mode-mon-col": 3,
+			"on-scroll": 1,
+			"on-click-right": "mode",
 			"format": {
-				"months": "<span color='#D3D04F'><b>{}</b></span>",
-				"days": "<span color='#93B1A6'><b>{}</b></span>",
-				"weekdays": "<span color='#8EAC50'><b>{}</b></span>",
-				"today": "<span color='#8EAC50'><b><u>{}</u></b></span>"
+				"months": "<span color='#b06565'><b>{}</b></span>",
+				"days": "<span color='#FFFFFF'><b>{}</b></span>",
+				"today": "<span color='#b06565'><b><u>{}</u></b></span>"
 			}
+		},
+		"actions": {
+			"on-click-right": "mode",
+			"on-click-forward": "tz_up",
+			"on-click-backward": "tz_down",
+			"on-scroll-up": "shift_up",
+			"on-scroll-down": "shift_down"
 		}
 	},
 	"backlight": {
